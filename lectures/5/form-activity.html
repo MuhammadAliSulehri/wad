@@ -10,62 +10,66 @@
 
 <!--<input type="text" name="name">-->
 
-
+<!--Answer: Nothing happens after entering name and pressing enter-->
 
 <!-- =============== Exercise 2 =================== -->
 <!-- After writing your name in input field press Enter,
         check URL, is it updated ? -->
 
-<!--<form>
-    <input type="text" name="name">
-</form>-->
+<!--<form>-->
+<!--<input type="text" name="name">-->
+<!--</form>-->
 
-
+<!--Answer: After the name is entered, it accepts the name and adds it in the URL as query (name=Muhammad+Ali) -->
 
 <!-- =============== Exercise 3 =================== -->
 <!-- After writing your name in input field press Submit button,
         is clicking submit different than pressing enter ? -->
 
-<!--<form>
-    <input type="text" name="name">
-    <input type="submit">
-</form>-->
+<!--<form>-->
+<!--<input type="text" name="name">-->
+<!--<input type="submit">-->
+<!--</form>-->
 
-
+<!--Answer: No,The submit button is not different then pressing enter.
+It also accepts the name and adds it in the URL when the user clicks the 'Submit' Button. -->
 
 <!-- =============== Exercise 4 =================== -->
 <!-- After writing your name and registration number in input fields,
         press Submit button, is the URL is same now ? -->
 
-<!--<form action="/my-handling-form-page">
-    <input type="text" name="name">
-    <input type="text" name="reg">
-    <input type="submit">
-</form>-->
+<!--<form action="/my-handling-form-page">-->
+<!--<input type="text" name="name">-->
+<!--<input type="text" name="reg">-->
+<!--<input type="submit">-->
+<!--</form>-->
+
+<!--Answer: The URL is not same as it adds another query of reg alongside with name
+(name=Muhammad+Ali & reg=L1f16bscs0184)-->
 
 
 <!-- =============== Exercise 5 =================== -->
 <!-- After writing some text in input field,
         press Submit button,  what happens? -->
 
-<!--<form action="http://www.google.com/search">
-    <input type="text" name="q">
-    <input type="submit">
-</form>-->
+<!--<form action="http://www.google.com/search">-->
+<!--<input type="text" name="q">-->
+<!--<input type="submit">-->
+<!--</form>-->
 
-
+<!--Answer: It searches the entered text on google search engine.-->
 
 <!-- =============== Exercise 6 =================== -->
 <!-- After writing "top web language" in input field,
         press Submit button,  what is the value of q parameter in URL ? -->
 
-<!--<form action="http://www.google.com/search">
-    <input type="text" name="q">
-    <input type="submit">
-</form>-->
+<!--<form action="http://www.google.com/search">-->
+<!--<input type="text" name="q">-->
+<!--<input type="submit">-->
+<!--</form>-->
 
 
-
+<!--Answer: the entered text is assigned to the q parameter in the URL (q=top+web+language)-->
 
 
 
@@ -73,12 +77,12 @@
 <!-- After writing "Imran Khan!" in input field,
         press Submit button,  what is the value of q parameter in URL ? -->
 
-<!--<form action="http://www.google.com/search">
-    <input type="text" name="q">
-    <input type="submit">
-</form>-->
+<!--<form action="http://www.google.com/search">-->
+<!--<input type="text" name="q">-->
+<!--<input type="submit">-->
+<!--</form>-->
 
-
+<!--Answer: The value of the q parameter is (q=Imran+Khan%21)-->
 
 <!-- =============== Exercise 8 =================== -->
 <!-- After writing your cell phone brand in input field,
@@ -88,20 +92,24 @@
         (Please check in "google chrome developers tool"
         under "Network" tab )-->
 
-<!--<form action="/form-handler" method="post">
-    <input type="text" name="q">
-    <input type="submit">
-</form>-->
+<!--<form action="/form-handler" method="post">-->
+<!--<input type="text" name="q">-->
+<!--<input type="submit">-->
+<!--</form>-->
 
+<!--Answer: Yes, there is an error code 404 and there are no URL and Query parameter anymore.-->
 
 <!-- =============== Exercise 9 =================== -->
 <!-- After writing some text in input field,
         press Submit button,  what is the value of q parameter in URL ? -->
 
-<!--<form action="/my-handling-form-page" method="get">
-    <input type="password" name="q">
-    <input type="submit">
-</form>-->
+<!--<form action="/my-handling-form-page" method="get">-->
+<!--<input type="password" name="q">-->
+<!--<input type="submit">-->
+<!--</form>-->
+
+<!-- Answer: THe input is taken as password, it is invisible whatever you write and the value of the
+q parameter is the entered password. (q=apple) -->
 
 
 <!-- =============== Exercise 10 =================== -->
@@ -109,80 +117,82 @@
         press Submit button,  what is the value of "g" parameter in URL
         in both cases ? -->
 
-<!--<form action="/my-handling-form-page" method="get">
-    <input type="checkbox" name="g">
-    <input type="submit">
-</form>-->
+<!--<form action="/my-handling-form-page" method="get">-->
+<!--<input type="checkbox" name="g">-->
+<!--<input type="submit">-->
+<!--</form>-->
 
-
+<!-- Answer: When the checkbox is un-selected there is no g parameter, but when it is selected then g=on-->
 
 <!-- =============== Exercise 11 =================== -->
 <!-- After selecting first 2 checkboxes,
         press Submit button,  what does query section of URL look like ?
 -->
 
-<!--<form action="/my-handling-form-page" method="get">
-    <input type="checkbox" name="g">
-    <input type="checkbox" name="h">
-    <input type="checkbox" name="q">
-    <br>
-    <input type="submit">
-</form>-->
+<!--<form action="/my-handling-form-page" method="get">-->
+<!--<input type="checkbox" name="g">-->
+<!--<input type="checkbox" name="h">-->
+<!--<input type="checkbox" name="q">-->
+<!--<br>-->
+<!--<input type="submit">-->
+<!--</form>-->
 
-
-
+<!-- Answer: when the first 2 checkboxes are selected then the query is like: (g=on & h=on) because the
+checkboxes with names g and h are selected-->
 
 <!-- =============== Exercise 12 =================== -->
 <!-- After selecting all radio buttons,
         press Submit button,  what does query section of URL look like ?
 -->
 
-<!--<form action="/my-handling-form-page" method="get">
-    <input type="radio" name="g">
-    <input type="radio" name="h">
-    <input type="radio" name="q">
-    <br>
-    <input type="submit">
-</form>-->
+<!--<form action="/my-handling-form-page" method="get">-->
+<!--<input type="radio" name="g">-->
+<!--<input type="radio" name="h">-->
+<!--<input type="radio" name="q">-->
+<!--<br>-->
+<!--<input type="submit">-->
+<!--</form>-->
 
-
-
+<!--Answer: when all the radio buttons are selected then the query is like: (g=on & h=on & q=on) because the
+radio buttons with names g,h,q are selected-->
 
 <!-- =============== Exercise 13 =================== -->
 <!-- After selecting 2nd radio buttons,
         press Submit button,  what is the value of "q" parameter in URL ?
 -->
 
-<!--<form action="/my-handling-form-page" method="get">
-    <input type="radio" name="q" value="one">
-    <input type="radio" name="q" value="two">
-    <input type="radio" name="q" value="three">
-    <br>
-    <input type="submit">
-</form>-->
+<!--<form action="/my-handling-form-page" method="get">-->
+<!--<input type="radio" name="q" value="one">-->
+<!--<input type="radio" name="q" value="two">-->
+<!--<input type="radio" name="q" value="three">-->
+<!--<br>-->
+<!--<input type="submit">-->
+<!--</form>-->
 
+<!-- Answer: when the second radio button which have the value of "two" is selected then the query also
+shows the value (q=two)-->
 
 <!-- =============== Exercise 14 =================== -->
 <!-- After selecting 3nd radio button,
         press Submit button,  what is the value of "q" parameter in URL ?
 -->
 
-<!--<form action="/my-handling-form-page" method="get">
-    <label> One
-        <input type="radio" name="q" value="one">
-    </label>
-    <label> Two
-        <input type="radio" name="q" value="two">
-    </label>
-    <label> Three
-        <input type="radio" name="q" value="three">
-    </label>
-    <br><br>
-    <input type="submit">
-</form>-->
+<!--<form action="/my-handling-form-page" method="get">-->
+<!--<label> One-->
+<!--<input type="radio" name="q" value="one">-->
+<!--</label>-->
+<!--<label> Two-->
+<!--<input type="radio" name="q" value="two">-->
+<!--</label>-->
+<!--<label> Three-->
+<!--<input type="radio" name="q" value="three">-->
+<!--</label>-->
+<!--<br><br>-->
+<!--<input type="submit">-->
+<!--</form>-->
 
 
-
+<!--Answer: the value of the q parameter shows the value of the radio button (q=three)-->
 
 
 <!-- =============== Exercise 15 =================== -->
@@ -190,17 +200,17 @@
         press Submit button,  what is the value of "q" parameter in URL ?
 -->
 
-<!--<form action="/my-handling-form-page" method="get">
-    <select name="q">
-        <option>one</option>
-        <option>two</option>
-        <option>three</option>
-    </select>
-    <br><br>
-    <input type="submit">
-</form>-->
+<!--<form action="/my-handling-form-page" method="get">-->
+<!--<select name="q">-->
+<!--<option>one</option>-->
+<!--<option>two</option>-->
+<!--<option>three</option>-->
+<!--</select>-->
+<!--<br><br>-->
+<!--<input type="submit">-->
+<!--</form>-->
 
-
+<!-- Answer: the value of the q parameter shows the option selected (q=two)-->
 
 
 
@@ -213,15 +223,17 @@
         press Submit button,  what is the value of "q" parameter in URL ?
 -->
 
-<!--<form action="/my-handling-form-page" method="get">
-    <select name="q">
-        <option value="1">the number one</option>
-        <option value="2">the middle two</option>
-        <option>the last three</option>
-    </select>
-    <br><br>
-    <input type="submit">
-</form>-->
+<!--<form action="/my-handling-form-page" method="get">-->
+<!--<select name="q">-->
+<!--<option value="1">the number one</option>-->
+<!--<option value="2">the middle two</option>-->
+<!--<option>the last three</option>-->
+<!--</select>-->
+<!--<br><br>-->
+<!--<input type="submit">-->
+<!--</form>-->
+
+<!--Answer: the value of the q parameter shows the value of the option selected (q=1)-->
 
 </body>
 </html>

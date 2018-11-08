@@ -6,10 +6,12 @@
 .article{
     border: 1px solid #E8E8E8;
     border-radius: 12px;
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);
     width:auto;
     margin: 0 0 10px 0;
     padding: 10px 12px;
-    background-color: #e8e8e8;
+    color:darkseagreen;
+    background-image: url("https://steamuserimages-a.akamaihd.net/ugc/851594855271629039/C127104FD5B431499AF7F8014170D213742BCC0E/");
 }
 
 .article-name h1{
@@ -38,6 +40,7 @@
 
 .article-overview a{
     text-decoration: none;
+    color:cyan;
 }
 
 .article-overview a:hover{
@@ -63,7 +66,7 @@
 }
 
 .lister-list>.lister-item{
-    background-color: #f6f6f5;
+    background-color: lightgray;
     margin-bottom: 3px;
     padding:10px 10px 20px;
 }
@@ -79,6 +82,7 @@
 }
 
 .lister-list>.lister-item>.lister-item-content{
+    color:black;
     width:80%;
     float:right;
 }
@@ -92,7 +96,7 @@
     color:#70579d;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: 'Bangers',cursive;
+    font-family: fantasy;
     letter-spacing: 3px;
 }
 
@@ -102,7 +106,7 @@
 }
 
 .lister-list>.lister-item>.lister-item-content>.lister-item-summary{
-    line-height: 140px;
+    line-height: 140%;
     font-size: 13px;
 }
 
@@ -120,5 +124,3 @@ p.lister-item-summary::selection{
     text-decoration: none;
     color:#70579d;
 }
-
-

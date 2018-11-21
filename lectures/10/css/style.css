@@ -1,0 +1,33 @@
+#background{
+    background: black;
+}
+
+@media only screen and (max-width: 400px) {
+    .extra_small{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+    .small{
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+    .small{
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+    .medium{
+        width: 32%;
+    }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    .large{
+        width: 25%;
+    }
+}

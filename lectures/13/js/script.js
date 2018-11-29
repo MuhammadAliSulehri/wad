@@ -27,11 +27,20 @@ var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
 function displayNext() {
-    /*Write your code here */
+    currentQuestion++;
+    var d1 = document.getElementById("question");
+    d1.innerText = questions[currentQuestion].question;
 }
 
 function displayCurrentQuestion() {
-    /*Write your code here */
+    var q = document.getElementById("question");
+    var c=document.getElementById("choice-list");
+    q.innerText = questions[currentQuestion].question;
+    for(var i=0;i<4;i++)
+    {
+        c.innerHTML+='<li>'+'<input type="radio" name="checked" >' + questions[currentQuestion].choices[i]+'</li>';
+    }
+
 }
 
 function resetQuiz() {

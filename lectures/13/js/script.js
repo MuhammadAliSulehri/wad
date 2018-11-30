@@ -26,16 +26,26 @@ var correctAnswers = 0;
 var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
+
 function displayNext() {
     currentQuestion++;
-    var d1 = document.getElementById("question");
-    d1.innerText = questions[currentQuestion].question;
+    displayCurrentQuestion();
 }
+
+var quiz_msg = [ "Select an option.",
+        "Option A Selected",
+        "Option B Selected",
+        "Option C Selected",
+        "Option D Selected"
+];
 
 function displayCurrentQuestion() {
     var q = document.getElementById("question");
-    var c=document.getElementById("choice-list");
+    var c =  document.getElementById("choice-list");
+    if(currentQuestion<3)
+        c.innerHTML=' ';
     q.innerText = questions[currentQuestion].question;
+
     for(var i=0;i<4;i++)
     {
         c.innerHTML+='<li>'+'<input type="radio" name="checked" >' + questions[currentQuestion].choices[i]+'</li>';

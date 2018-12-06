@@ -37,7 +37,7 @@ function displayNext() {
             document.getElementById("quiz-message").style.display = 'block';
         } else{
             document.getElementById("quiz-message").style.display = 'none';
-            if(selectedValue == questions[currentQuestion].correctAnswer){
+            if(selectedValue === questions[currentQuestion].correctAnswer){
                 correctAnswers++;
             }
             currentQuestion++;

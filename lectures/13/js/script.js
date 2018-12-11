@@ -30,12 +30,13 @@ document.getElementById("quiz-message").style.display = 'none';
 function displayNext() {
     if(!quizOver){
         var selectedValue = null;
-        if(document.querySelector('input[name="dq"]:checked') !== null)
+        if(document.querySelector('input[name="dq"]:checked') != null)
             selectedValue = document.querySelector('input[name="dq"]:checked').value;
-        if (selectedValue == null) {
-            document.getElementById("quiz-message").innerText = "Please selected an answer"
+        if (selectedValue === null) {
+            document.getElementById("quiz-message").innerText = "Please selected an answer";
             document.getElementById("quiz-message").style.display = 'block';
         } else{
+            selectedValue=parseInt(document.querySelector('input[name="dq"]:checked').value);
             document.getElementById("quiz-message").style.display = 'none';
             if(selectedValue === questions[currentQuestion].correctAnswer){
                 correctAnswers++;
@@ -46,7 +47,7 @@ function displayNext() {
             }
             else {
                 displayScore();
-                document.getElementById("next-btn").innerText = "Play Again?"
+                document.getElementById("next-btn").innerText = "Play Again?";
                 quizOver = true;
             }
         }

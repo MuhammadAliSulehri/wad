@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1 class="TitleH1">JS Bank</h1>
-<h2 class="TitleH2">Saving Account</span> </h2>
+<h2 class="TitleH2">Saving Account</h2>
 <div>
     <div class="AccountDetails">
         <div class="sav-acct-info">
@@ -40,14 +40,14 @@
 <div class="sav-acct-info acct-lft">
     <div class="acct-head">Deposit</div>
     <div class="acct-desc">
-        <input id="deposit" placeholder="Deposit Amount" onkeyup="savingsAccount.deposit.call(this, event, this.value)">
+        <input id="deposit" placeholder="Deposit Amount" onkeyup="add_amount(event,this.value)">
         <p id="deposit-msg"></p>
     </div>
 </div>
 <div class="sav-acct-info">
     <div class="acct-head">Withdraw</div>
     <div class="acct-desc">
-        <input id="withdraw" placeholder="Withdraw Amount" onkeyup="savingsAccount.withdraw.call(this, event, this.value)">
+        <input id="withdraw" placeholder="Withdraw Amount" onkeyup="delete_amount(event,this.value)">
         <p id="withdraw-msg"></p>
     </div>
 </div>

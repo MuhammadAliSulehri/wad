@@ -42,11 +42,15 @@ require_once "db_connection.php";
                     </div>
                     <select class="form-control" id="pro_cat" name="pro_cat">
                         <option>Select Category</option>
-                        <option>Mobile</option>
-                        <option>Laptop</option>
-                        <option>Tablet</option>
-                        <option>Watch</option>
-                        <option>Camera</option>
+                        <?php
+                        $getCatsQuery = "select * from categories";
+                        $getCatsResult = mysqli_query($con,$getCatsQuery);
+                        while($row = mysqli_fetch_assoc($getCatsResult)){
+                            $cat_id = $row['cat_id'];
+                            $cat_title = $row['cat_title'];
+                            echo "<option>$cat_title</option>";
+                        }
+                        ?>
                     </select>
                 </div>
             </div>
@@ -62,12 +66,15 @@ require_once "db_connection.php";
                     </div>
                     <select class="form-control" id="pro_brand" name="pro_brand">
                         <option>Select Brand</option>
-                        <option>Apple</option>
-                        <option>Samsung</option>
-                        <option>Oppo</option>
-                        <option>Dell</option>
-                        <option>HP</option>
-                        <option>Sony</option>
+                        <?php
+                        $getBrandsQuery = "select * from brands";
+                        $getBrandsResult = mysqli_query($con,$getBrandsQuery);
+                        while($row = mysqli_fetch_assoc($getBrandsResult)){
+                            $brand_id = $row['br_id'];
+                            $brand_title = $row['br_title'];
+                            echo "<option>$brand_title</option>";
+                        }
+                        ?>
                     </select>
                 </div>
             </div>

@@ -16,8 +16,8 @@ function getBrands(){
     $getBrandsQuery = "select * from brands";
     $getBrandsResult = mysqli_query($con,$getBrandsQuery);
     while($row = mysqli_fetch_assoc($getBrandsResult)){
-        $brand_id = $row['brand_id'];
-        $brand_title = $row['brand_title'];
+        $brand_id = $row['br_id'];
+        $brand_title = $row['br_title'];
         echo "<li><a class='nav-link'  href='#'>$brand_title</a></li>";
     }
 }

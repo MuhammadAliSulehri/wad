@@ -15,11 +15,37 @@ require_once "db_connection.php";
             font-family: 'Old Standard TT', serif;
         }
     </style>
+    <?php
+
+    require "db_connection.php";
+
+    if(isset($_POST['insert_button'])) {
+
+        $pr_cat = $_POST['pro_cat'];
+        $pr_brand = $_POST['pro_brand'];
+        $pr_title = $_POST['pro_title'];
+        $pr_price = $_POST['pro_price'];
+        $pr_kw = $_POST['pro_kw'];
+        $pr_desc = $_POST['pro_desc'];
+
+        $insert_query = "insert into products (pro_cat,pro_brand,pro_title,pro_price,pro_kw,pro_desc) 
+values ('$pr_cat','$pr_brand','$pr_title','$pr_price','$pr_kw','$pr_desc')";
+        echo $insert_query;
+        $result = mysqli_query($con, $insert_query);
+        if (!$result) {
+            echo "Not executed";
+        }
+        else
+        {
+            echo "Executed";
+        }
+    }
+    ?>
 </head>
 <body>
 <div class="container">
     <h1 class="text-center my-4"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Add New </span> Product </h1>
-    <form>
+    <form  action="insert_product.php" method="post">
         <div class="row">
             <div class="d-none d-sm-block col-sm-3 col-md-4 col-lg-2 col-xl-2 mt-auto">
                 <label for="pro_title" class="float-md-right"> <span class="d-sm-none d-md-inline"> Product </span> Title:</label>
@@ -130,7 +156,7 @@ require_once "db_connection.php";
         <div class="row my-3">
             <div class="d-none d-sm-block col-sm-3 col-md-4 col-lg-2 col-xl-2 mt-auto"></div>
             <div class="col-sm-9 col-md-8 col-lg-4 col-xl-4">
-                <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-plus"></i> Insert Now </button>
+                <button name="insert_button" type="submit" class="btn btn-primary btn-block"><i class="fas fa-plus"></i> Insert Now </button>
             </div>
         </div>
     </form>

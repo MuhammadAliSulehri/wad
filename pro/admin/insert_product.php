@@ -17,8 +17,6 @@ require_once "db_connection.php";
     </style>
     <?php
 
-    require "db_connection.php";
-
     if(isset($_POST['insert_button'])) {
 
         $pr_cat = $_POST['pro_cat'];
@@ -28,16 +26,22 @@ require_once "db_connection.php";
         $pr_kw = $_POST['pro_kw'];
         $pr_desc = $_POST['pro_desc'];
 
-        $insert_query = "insert into products (pro_cat,pro_brand,pro_title,pro_price,pro_kw,pro_desc) 
-values ('$pr_cat','$pr_brand','$pr_title','$pr_price','$pr_kw','$pr_desc')";
+        //getting image from the field
+        $pr_image = $_FILES['pro_image']['name'];
+        $pr_image_tmp = $_FILES['pro_image']['tmp_name'];
+        move_uploaded_file($pr_image_tmp, "product_images/$pr_image");
+
+        $insert_query = "insert into products (pro_cat,pro_brand,pro_title,pro_price,pro_kw,pro_desc,pro_image) 
+values ('$pr_cat','$pr_brand','$pr_title','$pr_price','$pr_kw','$pr_desc','$pr_image')";
         echo $insert_query;
         $result = mysqli_query($con, $insert_query);
         if (!$result) {
             echo "Not executed";
-        }
-        else
-        {
+        } else {
             echo "Executed";
+        }
+        if ($insert_query) {
+            header("location: " . $_SERVER['PHP_SELF']);
         }
     }
     ?>

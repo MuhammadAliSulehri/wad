@@ -17,24 +17,10 @@ require_once "db_connection.php";
     </style>
     <?php
 
-    require "db_connection.php";
-
     if(isset($_POST['insert_button'])) {
 
-        $pr_cat = $_POST['pro_cat'];
-        $pr_brand = $_POST['pro_brand'];
-        $pr_title = $_POST['pro_title'];
-        $pr_price = $_POST['pro_price'];
-        $pr_kw = $_POST['pro_kw'];
-        $pr_desc = $_POST['pro_desc'];
-
-        //getting image from the field
-        $pr_image = $_FILES['pro_image']['name'];
-        $pr_image_tmp = $_FILES['pro_image']['tmp_name'];
-        move_uploaded_file($pr_image_tmp, "product_images/$pr_image");
-
-        $insert_query = "insert into products (pro_cat,pro_brand,pro_title,pro_price,pro_kw,pro_desc,pro_image) 
-values ('$pr_cat','$pr_brand','$pr_title','$pr_price','$pr_kw','$pr_desc','$pr_image')";
+        $br_title = $_POST['br_title'];
+        $insert_query = "insert into brands (br_title) values ('$br_title')";
         echo $insert_query;
         $result = mysqli_query($con, $insert_query);
         if (!$result) {
@@ -42,26 +28,26 @@ values ('$pr_cat','$pr_brand','$pr_title','$pr_price','$pr_kw','$pr_desc','$pr_i
         } else {
             echo "Executed";
         }
-        if ($insert_query) {
-            header("location: " . $_SERVER['PHP_SELF']);
-        }
+        //if ($insert_query) {
+        //    header("location: " . $_SERVER['PHP_SELF']);
+        //}
     }
     ?>
 </head>
 <body>
 <div class="container">
     <h1 class="text-center my-4"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Add New </span> Brand </h1>
-    <form  action="insert_product.php" method="post">
+    <form  action="insert_brands.php" method="post">
         <div class="row">
             <div class="d-none d-sm-block col-sm-3 col-md-4 col-lg-2 col-xl-4 mt-auto">
-                <label for="pro_title" class="float-md-right"> <span class="d-sm-none d-md-inline"> Brand: </label>
+                <label for="br_title" class="float-md-right"> <span class="d-sm-none d-md-inline"> Brand Title: </label>
             </div>
             <div class="col-sm-9 col-md-8 col-lg-4 col-xl-4">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-file-signature"></i></div>
                     </div>
-                    <input type="text" class="form-control" id="pro_title" name="pro_title" placeholder="Enter Product Title" >
+                    <input type="text" class="form-control" id="br_title" name="br_title" placeholder="Enter Brand Title" >
                 </div>
             </div>
         </div>

@@ -237,3 +237,7 @@ a.article:hover {
     width: 180px;
     height: 180px;
 }
+
+input[name='c_name']:invalid {
+    background-color: red;
+}
